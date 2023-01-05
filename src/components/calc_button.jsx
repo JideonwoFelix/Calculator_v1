@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TextInput } from 'react-native';
 
 export default function Calc_button({val}) {
   return (
-    <Text style={style.calc_button}>{val}</Text>
+    <Text style={style.calc_button onPress={}}>{val}</Text>
   )
 }
 
