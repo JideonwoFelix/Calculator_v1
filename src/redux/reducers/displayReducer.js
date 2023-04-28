@@ -1,17 +1,32 @@
-import { UPDATE_DISPLAY } from '../constants';
+import { createSlice } from '@reduxjs/toolkit';
+
 
 const initialState = {
-    content: 0
-};
+    value: 0,
+  }
+export const calculator_displaySlice = createSlice({
+    name: 'counter',
+    initialState,
+    reducers: {
+        // updateDisplay:(state, action)=>{
+        //   return action.payload
+        // }
+        updateDisplay: (state = initialState, action) => {
+          switch (action.type) {
+            case 'ADD_TO_STRING':
+              return { ...state, counter: state.counter + action.payload };
+            case 'CLEAR_STRING':
+              return { ...state, counter: '' };
+            case 'UPDATE_VALUE':
+              return action.payload;
+            default:
+              return state;
+          }
+        }
+    },
+  })
 
-const displayReducer = (state = initialState,  action) => {
-    switch(action.type){
-        case UPDATE_DISPLAY:
-            return {
-                ...state,
-                count: action.payload
-            };
-        default: 
-            return state;
-    }
-}
+  // Action creators are generated for each case reducer function
+export const { updateDisplay } = calculator_displaySlice.actions
+
+export default calculator_displaySlice.reducer
