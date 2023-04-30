@@ -24,15 +24,18 @@ export default function App() {
         <Text>Calculator</Text>
         <DisplayBox/>
         <View style={styles.calc_grid}>
-              <Calc_button val={1}/>
-              <Calc_button val={2}/>
-              <Calc_button val={3}/>
-              <Calc_button val={4}/>
-              <Calc_button val={5}/>
-              <Calc_button val={6}/>
-              <Calc_button val={8}/>
-              <Calc_button val={9}/>
-              <Calc_button val={0}/>
+          <Calc_button val={1}/>
+          <Calc_button val={2}/>
+          <Calc_button val={3}/>
+          <Calc_button val={4}/>
+          <Calc_button val={5}/>
+          <Calc_button val={6}/>
+          <Calc_button val={8}/>
+          <Calc_button val={9}/>
+          <Calc_button val={0}/>
+          <Calc_button val={'='}/>
+          <Calc_button val={'DEL'}/>
+          <Calc_button val={'CLEAR'}/>
         </View>
       </View>
     </Provider>
@@ -45,13 +48,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingHorizontal: 20,
   },
   calc_grid:{
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    paddingHorizontal: 10,
     // backgroundColor: '#ffa',
   }
 });

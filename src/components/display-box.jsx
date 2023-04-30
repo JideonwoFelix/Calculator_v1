@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 
 export default function DisplayBox() {
-  const display_val = useSelector((state) => state.counter);
+  const display_val = useSelector((state) => state.calculator_display.value);
   console.log(display_val)
   return (
     <Text style={style.display_box}>{display_val}</Text>
@@ -23,6 +23,6 @@ const style = StyleSheet.create({
     textAlign: "center",
     fontSize: 30,
     fontWeight: "bold",
-    width: 320
+    width: '100%'
   },
 })
