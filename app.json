@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Calculator_v1",
-    "slug": "Calculator_v1",
+    "slug": "calculatorv1",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -24,10 +24,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.jideonwofelix.calculatorv1"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "3fa5f644-c58b-4c47-af86-58cac7338bf8"
+      }
+    },
+    "owner": "jideonwo-felix"
   }
 }

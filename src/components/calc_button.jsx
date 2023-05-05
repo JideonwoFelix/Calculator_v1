@@ -5,10 +5,16 @@ import { useSelector, useDispatch } from 'react-redux';
 
 export default function Calc_button({val}) {
   const dispatch = useDispatch();
-  const display_val = useSelector((state) => state.calculator_display);
+  const display_val = useSelector((state) => state.calculator_display.value);
   let color_box;
   
   function clickDisplay(num) {
+    if (display_val == '0') {
+      dispatch(updateDisplay({
+        type: 'UPDATE_VALUE',
+        value: ''
+      }));
+    }
     // console.log(num)
     // console.log('displayed content->',display_val);
     if (num =='CLEAR') {
@@ -21,7 +27,7 @@ export default function Calc_button({val}) {
         value: num
       }));
     } else if (num == '=') {
-       let calc_value = parseInt(display_val)
+       let calc_value = eval(display_val)
       dispatch(updateDisplay({
         type: 'UPDATE_VALUE',
         value: calc_value
@@ -40,6 +46,8 @@ export default function Calc_button({val}) {
     color_box = 'red'
   } else if (val == '=') {
     color_box = 'green'
+  } else if (val == '-' || val == '/' ||val == '+') {
+    color_box = 'black'
   } else {
     color_box = '#00f'
   }

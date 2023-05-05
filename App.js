@@ -33,9 +33,12 @@ export default function App() {
           <Calc_button val={8}/>
           <Calc_button val={9}/>
           <Calc_button val={0}/>
+          <Calc_button val={'-'}/>
+          <Calc_button val={'+'}/>
+          <Calc_button val={'/'}/>
           <Calc_button val={'='}/>
-          <Calc_button val={'DEL'}/>
           <Calc_button val={'CLEAR'}/>
+          <Calc_button val={'DEL'}/>
         </View>
       </View>
     </Provider>
